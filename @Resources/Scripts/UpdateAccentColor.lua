@@ -24,8 +24,17 @@ function updateAccentColor()
     local new_v_string = v_string:gsub("AccentColor,%x%x%x%x%x%x","AccentColor,"..r..g..b)
 
     r = string.format("%x",255-tonumber(r,16))
+    if(#r == 1) then
+        r = "0"..r
+    end
     g = string.format("%x",255-tonumber(g,16))
+    if(#g == 1) then
+        g = "0"..g
+    end
     b = string.format("%x",255-tonumber(b,16))
+    if(#b == 1) then
+        b = "0"..b
+    end
 
     new_f_string = r..g..b
 
